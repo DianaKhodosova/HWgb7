@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.13.21">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/jackson-annotations-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/jackson-core-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/jackson-databind-2.13.3.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/jackson-dataformat-xml-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/jackson-dataformat-yaml-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/snakeyaml-1.30.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/spring-beans-5.3.20.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/spring-context-5.3.20.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/spring-core-5.3.20.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/spring-web-5.3.20.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/stax2-api-4.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Новая папка 2/woodstox-core-6.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
