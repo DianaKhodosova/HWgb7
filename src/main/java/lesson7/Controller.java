@@ -23,7 +23,8 @@ public class Controller {
                 break;
             case FIVE_DAYS:
                 throw new IOException("Метод не реализован!");
-                //weatherModel.getWeather(selectedCity, Period.FIVE_DAYS);
+                //*weatherModel.getWeather(selectedCity, Period.FIVE_DAYS);
+                //break;
             case DB:
                 weatherModel.getSavedToDBWeather();
         }

@@ -19,6 +19,15 @@ public class UserInterfaceView {
             String command = scanner.nextLine();
 
             //TODO* Сделать метод валидации пользовательского ввода
+            /*
+            Я понимаю что такое валидация, но как грамотно это реализовать....
+            Вроде нужно отталкиваться от этого кода... но что дальше я не понимаю...
+            public class InputValidation {
+            public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println....
+
+             */
 
             if (command.equals("0")) break;
 

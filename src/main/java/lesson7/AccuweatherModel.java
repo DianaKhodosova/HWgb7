@@ -18,7 +18,9 @@ public class AccuweatherModel implements WeatherModel {
     private static final String VERSION = "v1";
     private static final String DAILY = "daily";
     private static final String ONE_DAY = "1day";
-    private static final String API_KEY = "pXJd8MokcZCdrd2MsoGl2DBZAyCa0zvv";
+
+    private static final String FIVE_DAYS = "5day";
+    private static final String API_KEY = "U0CW4YAxcvlKhC2EoufRmrtQTAGGRk5C";
     private static final String API_KEY_QUERY_PARAM = "apikey";
     private static final String LOCATIONS = "locations";
     private static final String CITIES = "cities";
@@ -50,12 +52,48 @@ public class AccuweatherModel implements WeatherModel {
                 Response oneDayForecastResponse = okHttpClient.newCall(request).execute();
                 String weatherResponse = oneDayForecastResponse.body().string();
                 System.out.println(weatherResponse);
+
                 //TODO: сделать человекочитаемый вывод погоды. Выбрать параметры для вывода на свое усмотрение
                 //Например: Погода в городе Москва - 5 градусов по цельсию Expect showers late Monday night
-                //dataBaseRepository.saveWeatherToDataBase(new Weather()) - тут после парсинга добавляем данные в БД
+                //dataBaseRepository.saveWeatherToDataBase(new Weather())
+                /* Тут тоже я не уверена но попробую что-то написать. Надесь вы поправите меня и укажите на ошибки.
+                Вы на уроке сказали распарсить с помощью ObjectMapper, Jackson. Так вот попробую предположить как это будет.
+                 ObjectMapper mapper = new ObjectMapper();
+                 Response response = mapper.readValue(jsonStr, Response.class);
+                 @JsonIgnoreProperties(ignoreUnknown = true) class Response {List<Weather> list; general getters and setters}
+                 @JsonIgnoreProperties(ignoreUnknown = true) class Weather.
+                 Применить @JsonIgnoreProperties (предоставленный Джексоном),
+                 чтобы игнорировать те поля, которые вам не нужны. У меня его почемуто не было и
+                 дабавляла его в ручную с сайта.
+                 */
+
+
+
                 break;
+
+                //TODO. Я попыталась сделать для 5 дней. Честно не до конца всё понмиаю. Как, что и за чем идет. Очень путаюсь.
             case FIVE_DAYS:
-                //TODO*: реализовать вывод погоды на 5 дней
+                public void getWeather(String selectedCity, Period period) throws IOException {
+                switch (period) {
+                    case FIVE_DAYS:
+                        HttpUrl httpUrl1 = new HttpUrl.Builder()
+                                .scheme(PROTOKOL)
+                                .host(BASE_HOST)
+                                .addPathSegment(FORECASTS)
+                                .addPathSegment(VERSION)
+                                .addPathSegment(DAILY)
+                                .addPathSegment(FIVE_DAYS)
+                                .addPathSegment(detectCityKey(selectedCity))
+                                .addQueryParameter(API_KEY_QUERY_PARAM, API_KEY)
+                                .build();
+
+                        Request request = new Request.Builder()
+                                .url(httpUrl)
+                                .build();
+
+                        Response fiveDayForecastResponse = okHttpClient.newCall(request).execute();
+                        String weatherResponse = fiveDayForecastResponse.body().string();
+                        System.out.println(weatherResponse);
                 break;
         }
     }
@@ -91,3 +129,6 @@ public class AccuweatherModel implements WeatherModel {
         return cityKey;
     }
 }
+
+    private void detectCityKey() {
+    }

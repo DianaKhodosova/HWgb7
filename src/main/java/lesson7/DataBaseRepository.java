@@ -57,7 +57,7 @@ public class DataBaseRepository {
 
     //public List<Weather> getSavedToDBWeather() {
     //    try (Connection connection = DriverManager.getConnection(DB_PATH)) {
-    //        //TODO: реализовать этот метод получения данных из таблицы погоды
+    //        //TODO: реализовать этот метод получения данных из таблицы погоды. Это дз на 8 урок.
     //    } catch (SQLException throwables) {
     //        throwables.printStackTrace();
     //    }
